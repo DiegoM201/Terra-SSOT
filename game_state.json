@@ -1,0 +1,915 @@
+{
+  "game_metadata": {
+    "name": "Project Terra",
+    "version": "0.1.0",
+    "turn": 1,
+    "active_tribe": "Tribe_A"
+  },
+  "layers": {
+    "sky": {
+      "z": 1,
+      "tiles": {
+        "-5,2": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-4,-1": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-4,1": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-4,3": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-4,4": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-4,5": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-3,5": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-2,0": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-1,-2": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-1,-1": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "-1,4": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "0,-2": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "0,-1": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "0,5": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "1,2": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "2,-4": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "2,-1": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "2,0": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "2,1": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "4,-2": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "5,-5": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "5,-3": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "5,-2": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "5,-1": {
+          "type": "Floating Island",
+          "properties": []
+        },
+        "5,0": {
+          "type": "Floating Island",
+          "properties": []
+        }
+      }
+    },
+    "crust": {
+      "z": 0,
+      "tiles": {
+        "-5,0": {
+          "type": "Water",
+          "properties": []
+        },
+        "-5,1": {
+          "type": "Land",
+          "properties": []
+        },
+        "-5,2": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-5,3": {
+          "type": "Water",
+          "properties": []
+        },
+        "-5,4": {
+          "type": "Water",
+          "properties": []
+        },
+        "-5,5": {
+          "type": "Water",
+          "properties": []
+        },
+        "-4,-1": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-4,0": {
+          "type": "Water",
+          "properties": []
+        },
+        "-4,1": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-4,2": {
+          "type": "Land",
+          "properties": []
+        },
+        "-4,3": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-4,4": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-4,5": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-3,-2": {
+          "type": "Land",
+          "properties": []
+        },
+        "-3,-1": {
+          "type": "Water",
+          "properties": []
+        },
+        "-3,0": {
+          "type": "Water",
+          "properties": []
+        },
+        "-3,1": {
+          "type": "Water",
+          "properties": []
+        },
+        "-3,2": {
+          "type": "Water",
+          "properties": []
+        },
+        "-3,3": {
+          "type": "Land",
+          "properties": []
+        },
+        "-3,4": {
+          "type": "Water",
+          "properties": []
+        },
+        "-3,5": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-2,-3": {
+          "type": "Land",
+          "properties": []
+        },
+        "-2,-2": {
+          "type": "Water",
+          "properties": []
+        },
+        "-2,-1": {
+          "type": "Water",
+          "properties": []
+        },
+        "-2,0": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-2,1": {
+          "type": "Land",
+          "properties": []
+        },
+        "-2,2": {
+          "type": "Water",
+          "properties": []
+        },
+        "-2,3": {
+          "type": "Land",
+          "properties": []
+        },
+        "-2,4": {
+          "type": "Water",
+          "properties": []
+        },
+        "-2,5": {
+          "type": "Water",
+          "properties": []
+        },
+        "-1,-4": {
+          "type": "Land",
+          "properties": []
+        },
+        "-1,-3": {
+          "type": "Water",
+          "properties": []
+        },
+        "-1,-2": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-1,-1": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-1,0": {
+          "type": "Land",
+          "properties": []
+        },
+        "-1,1": {
+          "type": "Water",
+          "properties": []
+        },
+        "-1,2": {
+          "type": "Land",
+          "properties": []
+        },
+        "-1,3": {
+          "type": "Land",
+          "properties": []
+        },
+        "-1,4": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "-1,5": {
+          "type": "Land",
+          "properties": []
+        },
+        "0,-5": {
+          "type": "Land",
+          "properties": []
+        },
+        "0,-4": {
+          "type": "Water",
+          "properties": []
+        },
+        "0,-3": {
+          "type": "Land",
+          "properties": []
+        },
+        "0,-2": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "0,-1": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "0,0": {
+          "type": "Water",
+          "properties": []
+        },
+        "0,1": {
+          "type": "Water",
+          "properties": []
+        },
+        "0,2": {
+          "type": "Water",
+          "properties": []
+        },
+        "0,3": {
+          "type": "Water",
+          "properties": []
+        },
+        "0,4": {
+          "type": "Water",
+          "properties": []
+        },
+        "0,5": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "1,-5": {
+          "type": "Water",
+          "properties": []
+        },
+        "1,-4": {
+          "type": "Land",
+          "properties": []
+        },
+        "1,-3": {
+          "type": "Water",
+          "properties": []
+        },
+        "1,-2": {
+          "type": "Land",
+          "properties": []
+        },
+        "1,-1": {
+          "type": "Water",
+          "properties": []
+        },
+        "1,0": {
+          "type": "Water",
+          "properties": []
+        },
+        "1,1": {
+          "type": "Land",
+          "properties": []
+        },
+        "1,2": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "1,3": {
+          "type": "Water",
+          "properties": []
+        },
+        "1,4": {
+          "type": "Cave Mouth",
+          "properties": []
+        },
+        "2,-5": {
+          "type": "Water",
+          "properties": []
+        },
+        "2,-4": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "2,-3": {
+          "type": "Water",
+          "properties": []
+        },
+        "2,-2": {
+          "type": "Land",
+          "properties": []
+        },
+        "2,-1": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "2,0": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "2,1": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "2,2": {
+          "type": "Water",
+          "properties": []
+        },
+        "2,3": {
+          "type": "Water",
+          "properties": []
+        },
+        "3,-5": {
+          "type": "Land",
+          "properties": []
+        },
+        "3,-4": {
+          "type": "Cave Mouth",
+          "properties": []
+        },
+        "3,-3": {
+          "type": "Land",
+          "properties": []
+        },
+        "3,-2": {
+          "type": "Land",
+          "properties": []
+        },
+        "3,-1": {
+          "type": "Land",
+          "properties": []
+        },
+        "3,0": {
+          "type": "Land",
+          "properties": []
+        },
+        "3,1": {
+          "type": "Land",
+          "properties": []
+        },
+        "3,2": {
+          "type": "Land",
+          "properties": []
+        },
+        "4,-5": {
+          "type": "Water",
+          "properties": []
+        },
+        "4,-4": {
+          "type": "Land",
+          "properties": []
+        },
+        "4,-3": {
+          "type": "Land",
+          "properties": []
+        },
+        "4,-2": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "4,-1": {
+          "type": "Water",
+          "properties": []
+        },
+        "4,0": {
+          "type": "Water",
+          "properties": []
+        },
+        "4,1": {
+          "type": "Cave Mouth",
+          "properties": []
+        },
+        "5,-5": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "5,-4": {
+          "type": "Land",
+          "properties": []
+        },
+        "5,-3": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "5,-2": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "5,-1": {
+          "type": "High Peak",
+          "properties": [
+            "Shadowed"
+          ]
+        },
+        "5,0": {
+          "type": "Water",
+          "properties": [
+            "Shadowed"
+          ]
+        }
+      }
+    },
+    "mantle": {
+      "z": -1,
+      "tiles": {
+        "-5,0": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-5,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-5,2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-5,3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-5,4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-5,5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-4,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-4,0": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-4,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-4,2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-4,3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-4,4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-4,5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-3,-2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-3,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-3,0": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-3,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-3,2": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "-3,3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-3,4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-3,5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-2,-3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-2,-2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-2,-1": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "-2,0": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-2,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-2,2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-2,3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-2,4": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "-2,5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,-4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,-3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,-2": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "-1,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,0": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "-1,5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,-5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,-4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,-3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,-2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,0": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "0,5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,-5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,-4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,-3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,-2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,0": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "1,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "1,4": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "2,-5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "2,-4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "2,-3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "2,-2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "2,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "2,0": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "2,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "2,2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "2,3": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "3,-5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "3,-4": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "3,-3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "3,-2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "3,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "3,0": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "3,1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "3,2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "4,-5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "4,-4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "4,-3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "4,-2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "4,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "4,0": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "4,1": {
+          "type": "Cavern Path",
+          "properties": []
+        },
+        "5,-5": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "5,-4": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "5,-3": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "5,-2": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "5,-1": {
+          "type": "Solid Rock",
+          "properties": []
+        },
+        "5,0": {
+          "type": "Solid Rock",
+          "properties": []
+        }
+      }
+    }
+  },
+  "units": {},
+  "cities": {},
+  "tribes": {
+    "Tribe_A": {
+      "score": 0,
+      "techs": [],
+      "resources": {
+        "stars": 5,
+        "faith": 0
+      }
+    }
+  }
+}
