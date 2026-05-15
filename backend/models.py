@@ -36,11 +36,17 @@ class City(BaseModel):
     population: int
     max_population: int
 
+class TribeHeuristics(BaseModel):
+    expansion_weight: float = 0.5
+    aggression_weight: float = 0.5
+    faith_weight: float = 0.5
+
 class Player(BaseModel):
     tribe: str
     stars: int
     techs: list[str] = Field(default_factory=list)
     total_cities: int
+    heuristics: TribeHeuristics = Field(default_factory=TribeHeuristics)
 
 class GameState(BaseModel):
     turn: int
