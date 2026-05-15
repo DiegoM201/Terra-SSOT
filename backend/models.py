@@ -1,19 +1,39 @@
 from pydantic import BaseModel, Field
-from typing import List
+
+class Tile(BaseModel):
+    q: int
+    r: int
+    z: int
+    biome: str
+    resource: str | None = None
+    building: str | None = None
 
 class Unit(BaseModel):
     id: str
-    name: str
-    max_hp: int = Field(ge=1, le=40, description="HP must be between 1 and 40")
-    attack: int = Field(ge=1, le=5)
-    defense: int = Field(ge=1, le=5)
-    movement: int = Field(ge=1, le=3)
-    range: int = Field(ge=1, le=3)
-    traits: List[str]
+    type: str
+    tribe: str
+    hp: int
+    max_hp: int
+    atk: int
+    def_stat: int = Field(..., alias="def")
+    q: int
+    r: int
+    z: int
+    is_veteran: bool = False
 
-class Tribe(BaseModel):
+class City(BaseModel):
     id: str
     name: str
-    home_layer: int = Field(ge=-1, le=1, description="Z-axis: -1 (Mantle), 0 (Surface), 1 (Sky)")
-    starting_tech: str
-    passive_feature: str
+    tribe: str
+    q: int
+    r: int
+    z: int
+    level: int
+    population: int
+    max_population: int
+
+class GameState(BaseModel):
+    turn: int
+    tiles: dict[str, Tile]
+    units: dict[str, Unit]
+    cities: dict[str, City]
