@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 class Tile(BaseModel):
     q: int
@@ -20,6 +20,10 @@ class Unit(BaseModel):
     r: int
     z: int
     is_veteran: bool = False
+    range: int = 1
+    kills: int = 0
+    has_attacked: bool = False
+    model_config = ConfigDict(populate_by_name=True)
 
 class City(BaseModel):
     id: str
