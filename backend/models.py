@@ -32,8 +32,15 @@ class City(BaseModel):
     population: int
     max_population: int
 
+class Player(BaseModel):
+    tribe: str
+    stars: int
+    techs: list[str] = Field(default_factory=list)
+    total_cities: int
+
 class GameState(BaseModel):
     turn: int
     tiles: dict[str, Tile]
     units: dict[str, Unit]
     cities: dict[str, City]
+    players: dict[str, Player]

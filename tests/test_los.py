@@ -7,7 +7,8 @@ def create_mock_state() -> GameState:
         turn=1,
         tiles={},
         units={},
-        cities={}
+        cities={},
+        players={}
     )
 
 def test_los_sky_to_surface():

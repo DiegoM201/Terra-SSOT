@@ -1,5 +1,6 @@
 from backend.models import GameState, Unit
 from backend.hex_math import hex_distance
+from backend.economy import calculate_spt, calculate_tech_cost
 import uuid
 
 def process_command(current_state: GameState, command_string: str) -> GameState:
@@ -17,7 +18,6 @@ def process_command(current_state: GameState, command_string: str) -> GameState:
     new_state = current_state.model_copy(deep=True)
     
     if action == "spawn" and len(parts) >= 6:
-        # spawn <unit_type> <tribe> <q> <r> <z>
         unit_type = parts[1]
         tribe = parts[2]
         try:
@@ -25,11 +25,9 @@ def process_command(current_state: GameState, command_string: str) -> GameState:
             r = int(parts[4])
             z = int(parts[5])
         except ValueError:
-            return new_state # Invalid coordinates
+            return new_state
             
         unit_id = f"unit_{str(uuid.uuid4())[:8]}"
-        
-        # Standard base stats for scaffolding
         hp, atk, def_stat = 10, 2, 2
         
         new_unit = Unit(**{
@@ -48,7 +46,6 @@ def process_command(current_state: GameState, command_string: str) -> GameState:
         new_state.units[unit_id] = new_unit
         
     elif action == "move" and len(parts) >= 5:
-        # move <unit_id> <q> <r> <z>
         unit_id = parts[1]
         try:
             q = int(parts[2])
@@ -59,26 +56,43 @@ def process_command(current_state: GameState, command_string: str) -> GameState:
             
         unit = new_state.units.get(unit_id)
         if not unit:
-            return new_state # Unit not found
+            return new_state
             
         target_key = f"{q},{r},{z}"
         
-        # Validation 1: Target tile exists
         if target_key not in new_state.tiles:
             return new_state
             
-        # Validation 2: Target tile unoccupied
         is_occupied = any(u.q == q and u.r == r and u.z == z for u in new_state.units.values())
         if is_occupied:
             return new_state
             
-        # Validation 3: Distance bounds (base unit move is 1 hex for now)
         dist = hex_distance(unit.q, unit.r, q, r)
-        
-        # Assume moving on same Z layer
         if unit.z == z and dist <= 1:
             unit.q = q
             unit.r = r
             unit.z = z
+
+    elif action == "end_turn" and len(parts) >= 2:
+        tribe = parts[1]
+        player = new_state.players.get(tribe)
+        if player:
+            player.total_cities = sum(1 for city in new_state.cities.values() if city.tribe == tribe)
+            spt = calculate_spt(new_state, tribe)
+            player.stars += spt
+
+    elif action == "research" and len(parts) >= 3:
+        tribe = parts[1]
+        tech_name = parts[2]
+        player = new_state.players.get(tribe)
+        
+        if player and tech_name not in player.techs:
+            player.total_cities = sum(1 for city in new_state.cities.values() if city.tribe == tribe)
+            base_cost = 5 # Mock tier 1 base cost
+            cost = calculate_tech_cost(base_cost, player.total_cities)
+            
+            if player.stars >= cost:
+                player.stars -= cost
+                player.techs.append(tech_name)
             
     return new_state

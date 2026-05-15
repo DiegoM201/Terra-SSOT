@@ -7,7 +7,8 @@ def create_mock_state() -> GameState:
         turn=1,
         tiles={},
         units={},
-        cities={}
+        cities={},
+        players={}
     )
     # Add some tiles for movement
     state.tiles["0,0,0"] = Tile(q=0, r=0, z=0, biome="Plains")
