@@ -372,8 +372,7 @@
         },
         "1,1": {
           "type": "Land",
-          "properties": [],
-          "resource": "Fruit"
+          "properties": []
         },
         "1,2": {
           "type": "Water",
@@ -901,24 +900,7 @@
       }
     }
   },
-  "units": {
-    "unit_4648babd": {
-      "id": "unit_4648babd",
-      "type": "warrior",
-      "tribe": "Tribe_A",
-      "hp": 10,
-      "max_hp": 10,
-      "atk": 2,
-      "def": 2,
-      "q": 1,
-      "r": 1,
-      "z": 0,
-      "is_veteran": false,
-      "range": 1,
-      "kills": 0,
-      "has_attacked": false
-    }
-  },
+  "units": {},
   "cities": {},
   "tribes": {
     "Tribe_A": {
