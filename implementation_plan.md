@@ -6,12 +6,13 @@ This plan details the implementation of a massive engine refactor for Terra, foc
 
 > [!WARNING]
 > We will completely remove the current `if/elif` structure in `cli_router.py` in favor of a Command Dispatcher pattern. Any custom scripts relying on the exact internal structure of `process_command` beyond its external signature will need to be updated.
-> 
+>
 > `SimTest.py` will be created in the root directory and will act as a headless simulation loop.
 
 ## Open Questions
 
 > [!IMPORTANT]
+>
 > 1. **Unit Stats:** I will use generic default stats for Warrior, Archer, and Sentinel (e.g., Warrior: 10 HP, 2 ATK, 2 DEF, Range 1, native_z 0; Archer: 8 HP, 2 ATK, 1 DEF, Range 2, native_z 0; Sentinel: 15 HP, 1 ATK, 3 DEF, Range 1, native_z 1). Please confirm if these are acceptable or provide specific stats.
 > 2. **Tile Features:** For Z-axis transitions, should `"cave_mouth"` and `"high_peak"` be treated as the tile's `biome`, `resource`, or `building`? I will check if they match any of these three fields by default.
 
@@ -22,6 +23,7 @@ This plan details the implementation of a massive engine refactor for Terra, foc
 ### Models (Local AI Brains)
 
 #### [MODIFY] [models.py](file:///c:/Users/diego/OneDrive/Desktop/Terra%20SSOT/backend/models.py)
+
 - Create `TribeHeuristics` Pydantic BaseModel with `float` fields: `expansion_weight`, `aggression_weight`, `faith_weight` (defaulting to 0.5).
 - Add `heuristics: TribeHeuristics` field to the `Player` model (with default empty heuristics).
 
@@ -30,6 +32,7 @@ This plan details the implementation of a massive engine refactor for Terra, foc
 ### Command Dispatcher & Z-Axis (Router Refactor)
 
 #### [MODIFY] [cli_router.py](file:///c:/Users/diego/OneDrive/Desktop/Terra%20SSOT/backend/cli_router.py)
+
 - **Unit Registry:** Add `UNIT_STATS` dictionary mapping "warrior", "archer", and "sentinel" to their HP, ATK, DEF, Range, and `native_z` (Sky=1, Surface=0, Mantle=-1).
 - **Command Dispatcher:** Refactor `process_command` to use a `COMMAND_REGISTRY` mapping string commands to dedicated helper functions (`_handle_spawn`, `_handle_move`, `_handle_attack`, `_handle_end_turn`, `_handle_research`).
 - **Z-Axis Validation:** In `_handle_move`, add logic to check Z-axis differences.
@@ -43,6 +46,7 @@ This plan details the implementation of a massive engine refactor for Terra, foc
 ### Heuristic Engine & Telemetry
 
 #### [NEW] [SimTest.py](file:///c:/Users/diego/OneDrive/Desktop/Terra%20SSOT/SimTest.py)
+
 - Create a local standalone test loop script.
 - **Telemetry:** Implement `log_transition(command, old_state, new_state)` to calculate player economy deltas and write timestamped JSON logs to `sim_history.jsonl`.
 - **Heuristics:** Implement `HeuristicEngine` to evaluate utility based on tribe heuristics (`expansion_weight`, `aggression_weight`, `faith_weight`) and return simple CLI actions (e.g., spawn, research, end_turn).
@@ -51,8 +55,10 @@ This plan details the implementation of a massive engine refactor for Terra, foc
 ## Verification Plan
 
 ### Automated Tests
+
 - Run `pytest` to ensure all existing functionality in `test_router.py` remains intact with the new Dispatcher pattern.
 - Execute `python SimTest.py` to ensure it successfully generates `sim_history.jsonl` with multiple turns of AI actions without crashing.
 
 ### Manual Verification
+
 - Review `sim_history.jsonl` to ensure proper JSON serialization and telemetry structure (deltas are correct).
